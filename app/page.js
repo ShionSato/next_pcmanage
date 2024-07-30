@@ -4,19 +4,33 @@ import Header from "./components/Layout/Header";
 import Sidebar from "./components/Layout/Sidebar";
 import List from "./components/List/list";
 import Status from "./components/status/status";
+import { useEffect } from "react";
 
-window.addEventListener('error', (event) => {
-  if (event.message.includes('Hydration failed')) {
-    event.stopImmediatePropagation();
-  }
-});
-
-window.addEventListener('unhandledrejection', (event) => {
-  if (event.reason.message.includes('Hydration failed')) {
-    event.stopImmediatePropagation();
-  }
-});
 export default function Home() {
+
+  useEffect(() => {
+    const handleError = (event) => {
+      if (event.message.includes('Hydration failed')) {
+        event.stopImmediatePropagation();
+      }
+    };
+
+    const handleUnhandledRejection = (event) => {
+      if (event.reason.message.includes('Hydration failed')) {
+        event.stopImmediatePropagation();
+      }
+    };
+
+    window.addEventListener('error', handleError);
+    window.addEventListener('unhandledrejection', handleUnhandledRejection);
+
+    return () => {
+      window.removeEventListener('error', handleError);
+      window.removeEventListener('unhandledrejection', handleUnhandledRejection);
+    };
+  }, []);
+
+
   return (
     <>
     <main className={styles.main}>
