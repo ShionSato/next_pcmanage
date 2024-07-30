@@ -1,13 +1,12 @@
 'use client'
+import { useEffect } from 'react';
 import styles from "./page.module.css";
 import Header from "./components/Layout/Header";
 import Sidebar from "./components/Layout/Sidebar";
 import List from "./components/List/list";
 import Status from "./components/status/status";
-import { useEffect } from "react";
 
 export default function Home() {
-
   useEffect(() => {
     const handleError = (event) => {
       if (event.message.includes('Hydration failed')) {
@@ -29,7 +28,6 @@ export default function Home() {
       window.removeEventListener('unhandledrejection', handleUnhandledRejection);
     };
   }, []);
-
 
   return (
     <>
