@@ -15,7 +15,7 @@ export default function Return(){
         if (!isChecked) {
             alert("返却確認チェックをしてください");
         }else{
-            axios.post('http://localhost:8080/return', detail)
+            axios.post('http://57.181.17.181:8080/return', detail)
             .then(response => {
                 setStatus("detail");
                 setDetail(response.data)

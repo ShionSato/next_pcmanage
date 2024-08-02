@@ -37,7 +37,7 @@ export default function RentalEdit() {
             alert(errorMessage);
             return; 
         }
-        axios.post('http://localhost:8080/lentedit', formData)
+        axios.post('http://57.181.17.181:8080/lentedit', formData)
             .then(response => {
                 setDetail(response.data);
                 setStatus("detail");

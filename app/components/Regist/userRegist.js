@@ -42,7 +42,7 @@ export default function UserRegist() {
             alert(errorMessage);
             return; 
         }
-        axios.post('http://localhost:8080/usercreate', formData)
+        axios.post('http://57.181.17.181:8080/usercreate', formData)
             .then(response => {
                 if(response.data==="userNo used"){
                     alert("すでに登録されている社員番号です")

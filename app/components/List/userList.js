@@ -7,7 +7,7 @@ const fetcher = (...args) => fetch(...args).then(res => res.json())
 export default function UserList() {
     const {setDetail, setStatus} = useContext(AllContext)
     const [selectedRow, setSelectedRow] = useState(null);
-    const { data, error, isLoading } = useSWR('http://localhost:8080/userlist', fetcher)
+    const { data, error, isLoading } = useSWR('http://57.181.17.181:8080/userlist', fetcher)
     if (error) return <div>failed to load</div>
     if (isLoading) return <div>loading...</div>
     

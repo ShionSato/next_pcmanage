@@ -47,7 +47,7 @@ export default function DeviceRegist() {
             alert(errorMessage);
             return; 
         }
-        axios.post('http://localhost:8080/devicecreate', formData)
+        axios.post('http://57.181.17.181:8080/devicecreate', formData)
             .then(response => {
                 if(response.data==="assetNo error"){
                     alert("すでに登録されている資産番号です")

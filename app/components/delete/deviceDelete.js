@@ -13,7 +13,7 @@ export default function DeviceDelete(){
         if (!isChecked) {
             alert("削除確認チェックをしてください");
         }else{
-            axios.post('http://localhost:8080/devicedelete', detail)
+            axios.post('http://57.181.17.181:8080/devicedelete', detail)
             .then(response => {
                 
                 if(response.data==="rental"){

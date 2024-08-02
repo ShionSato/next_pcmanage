@@ -64,7 +64,7 @@ export default function DeviceEdit() {
             alert(errorMessage);
             return; 
         }
-        axios.post('http://localhost:8080/deviceedit', formData)
+        axios.post('http://57.181.17.181:8080/deviceedit', formData)
             .then(response => {
                 console.log(response.data);
                 setDetail(response.data);

@@ -6,7 +6,7 @@ const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 export default function Rental(){
     const {detail, setDetail, setStatus} = useContext(AllContext);
-    const { data, error, isLoading } = useSWR('http://localhost:8080/userlist', fetcher)
+    const { data, error, isLoading } = useSWR('http://57.181.17.181:8080/userlist', fetcher)
     if (error) return <div>failed to load</div>
     if (isLoading) return <div>loading...</div>
 
@@ -57,7 +57,7 @@ export default function Rental(){
             alert(errorMessage);
             return; 
         }
-        axios.post('http://localhost:8080/rental', formData)
+        axios.post('http://57.181.17.181:8080/rental', formData)
             .then(response => {
                 setDetail(response.data);
                 setStatus("detail");

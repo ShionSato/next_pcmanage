@@ -53,7 +53,7 @@ export default function UserEdit() {
             alert(errorMessage);
             return; 
         }
-        axios.post('http://localhost:8080/useredit', formData)
+        axios.post('http://57.181.17.181:8080/useredit', formData)
             .then(response => {
                 console.log(response.data);
                 setDetail(response.data);

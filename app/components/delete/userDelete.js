@@ -13,7 +13,7 @@ export default function UserDelete(){
         if (!isChecked) {
             alert("削除確認チェックをしてください");
         }else{
-            axios.post('http://localhost:8080/userdelete', detail)
+            axios.post('http://57.181.17.181:8080/userdelete', detail)
             .then(response => {
                 setStatus(null);
                 alert(response.data)
